@@ -1,0 +1,21 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+         arrt(nums,k);
+    }
+    public static void arrt(int arr[],int p){
+         p = p%arr.length;
+        inverse(arr,arr.length-p,arr.length-1);
+        inverse(arr,0,arr.length-p-1);
+        inverse(arr,0,arr.length-1);
+    
+    }
+    public static void inverse(int arr[] ,int i,int j){
+        while(i<j){
+            int temp = arr[i];
+            arr[i]= arr[j];
+            arr[j]= temp;
+            i++;
+            j--;
+        }
+    }
+}
