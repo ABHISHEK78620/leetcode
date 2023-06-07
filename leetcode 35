@@ -1,0 +1,28 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        return find(nums,target);
+    }
+    public static int find(int arr[],int target){
+        int a=0;
+        int b =0;
+        int c = arr.length-1;
+        while(a<=c){
+            b = (a+c)/2;
+            if(arr[b]==target){
+                return b;
+            }
+            else if(arr[b]<target){
+                a=b+1;
+
+            }
+            else{
+                c=b-1;
+            }
+        }
+        if(arr[b]>target){
+            return b;
+        }
+        else {
+        return b+1;}
+    }
+}
